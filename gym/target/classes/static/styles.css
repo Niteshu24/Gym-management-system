@@ -1,0 +1,9 @@
+h1 {
+    color: #FF4500;
+    /* Orange color */
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
