@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Trainers - Gym Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #4CAF50;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .trainer {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+        }
+
+        .trainer img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .trainer-info {
+            flex: 1;
+        }
+
+        .trainer h3 {
+            margin: 0;
+        }
+
+        .trainer button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .trainer button:hover {
+            background-color: #45a049;
+        }
+
+        .months {
+            margin-top: 10px;
+        }
+
+        .testimonial {
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 200px;
+            /* Increase the width */
+            height: 200px;
+            /* Increase the height */
+            margin-right: 20px;
+            object-fit: cover;
+            /* Ensures the image covers the entire area without distortion */
+        }
+
+        h1 {
+            color: #45a049
+        }
+
+        h3 {
+            color: #45a049
+        }
+
+        label {
+            color: #45a049
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Gym Name</div>
+        <ul class="nav-links">
+            <li><a href="/home">Home</a></li> <!-- Link to the Home page -->
+            <li><a href="/membership">Memberships</a></li> <!-- Link to the Membership page -->
+            <li><a href="/trainers">Trainers</a></li> <!-- Link to the Trainers page -->
+            <li><a href="#" onclick="logout()">Logout</a></li> <!-- Logout functionality -->
+        </ul>
+    </nav>
+
+
+    <!-- Trainers Section -->
+    <div class="container">
+        <h1>Our Trainers</h1>
+
+        <div class="trainer">
+            <img src="john.jpg" alt="John Doe">
+            <div class="trainer-info">
+                <h3>John Doe</h3>
+                <p><strong>Experience:</strong> 10 years in personal training, specializing in strength and
+                    conditioning.</p>
+                <p>John has helped numerous clients achieve their fitness goals through tailored workout plans and
+                    nutritional guidance.</p>
+                <p><strong>Fee:</strong> $50/session</p>
+                <div class="months">
+                    <label for="months-john">Choose months:</label>
+                    <select id="months-john">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">12 Months</option>
+                    </select>
+                    <button
+                        onclick="hireTrainer('John Doe', document.getElementById('months-john').value)">Hire</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trainer">
+            <img src="jane.jpg" alt="Jane Smith">
+            <div class="trainer-info">
+                <h3>Jane Smith</h3>
+                <p><strong>Experience:</strong> 7 years of experience in group fitness and yoga instruction.</p>
+                <p>Jane’s classes are known for their energy and inclusivity, making fitness fun for everyone.</p>
+                <p><strong>Fee:</strong> $40/session</p>
+                <div class="months">
+                    <label for="months-jane">Choose months:</label>
+                    <select id="months-jane">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">12 Months</option>
+                    </select>
+                    <button
+                        onclick="hireTrainer('Jane Smith', document.getElementById('months-jane').value)">Hire</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trainer">
+            <img src="mark.jpg" alt="Mark Johnson">
+            <div class="trainer-info">
+                <h3>Mark Johnson</h3>
+                <p><strong>Experience:</strong> 5 years as a certified nutritionist and personal trainer.</p>
+                <p>Mark focuses on holistic wellness, ensuring his clients not only get fit but also maintain a healthy
+                    lifestyle.</p>
+                <p><strong>Fee:</strong> $45/session</p>
+                <div class="months">
+                    <label for="months-mark">Choose months:</label>
+                    <select id="months-mark">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">12 Months</option>
+                    </select>
+                    <button
+                        onclick="hireTrainer('Mark Johnson', document.getElementById('months-mark').value)">Hire</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trainer">
+            <img src="sarah.jpg" alt="Sarah Lee">
+            <div class="trainer-info">
+                <h3>Sarah Lee</h3>
+                <p><strong>Experience:</strong> 8 years in Pilates and core strengthening.</p>
+                <p>Sarah helps clients build core strength and flexibility through her engaging Pilates classes.</p>
+                <p><strong>Fee:</strong> $55/session</p>
+                <div class="months">
+                    <label for="months-sarah">Choose months:</label>
+                    <select id="months-sarah">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">12 Months</option>
+                    </select>
+                    <button
+                        onclick="hireTrainer('Sarah Lee', document.getElementById('months-sarah').value)">Hire</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trainer">
+            <img src="alex.jpg" alt="Alex Brown">
+            <div class="trainer-info">
+                <h3>Alex Brown</h3>
+                <p><strong>Experience:</strong> 6 years in martial arts and self-defense training.</p>
+                <p>Alex's classes focus on building self-defense skills and improving physical fitness through martial
+                    arts.</p>
+                <p><strong>Fee:</strong> $60/session</p>
+                <div class="months">
+                    <label for="months-alex">Choose months:</label>
+                    <select id="months-alex">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">12 Months</option>
+                    </select>
+                    <button
+                        onclick="hireTrainer('Alex Brown', document.getElementById('months-alex').value)">Hire</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trainer">
+            <img src="emily.jpg" alt="Emily Clark">
+            <div class="trainer-info">
+                <h3>Emily Clark</h3>
+                <p><strong>Experience:</strong> 9 years in dance fitness and Zumba.</p>
+                <p>Emily's dance classes are high-energy and designed to make fitness fun while burning calories.</p>
+                <p><strong>Fee:</strong> $50/session</p>
+                <div class="months">
+                    <label for="months-emily">Choose months:</label>
+                    <select id="months-emily">
+                        <option value="1">1 Month</option>
+                        <option value="3">3 Months</option>
+                        <option value="6">6 Months</option>
+                        <option value="12">12 Months</option>
+                    </select>
+                    <button
+                        onclick="hireTrainer('Emily Clark', document.getElementById('months-emily').value)">Hire</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Client Testimonials</h2>
+        <div class="testimonial">
+            <p>"John's training has transformed my life! I've never felt stronger."</p>
+            <h4>- Sarah Lee</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Jane’s yoga classes are the highlight of my week. They help me relax and stay fit!"</p>
+            <h4>- Alex Brown</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Mark taught me that fitness is about balance. I've learned to enjoy healthy eating and exercise!"</p>
+            <h4>- Emily Clark</h4>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Gym Name. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </div>
+        <p>Contact us: info@gymname.com | Phone: (123) 456-7890</p>
+    </footer>
+
+    <script>
+        let selectedTrainer = '';
+        let selectedMonths = '';
+
+        // Function to hire a trainer and show a modal popup
+        function hireTrainer(trainerName, months) {
+            // Store selected trainer and months for confirmation
+            selectedTrainer = trainerName;
+            selectedMonths = months;
+
+            // Create a modal container
+            const modal = document.createElement('div');
+            modal.id = 'hireModal';
+            modal.style.position = 'fixed';
+            modal.style.left = '0';
+            modal.style.top = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = '1000';
+
+            // Create modal content
+            const modalContent = document.createElement('div');
+            modalContent.style.backgroundColor = 'white';
+            modalContent.style.padding = '20px';
+            modalContent.style.borderRadius = '10px';
+            modalContent.style.textAlign = 'center';
+            modalContent.style.width = '300px';
+            modalContent.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+
+            // Add message inside the modal
+            const message = document.createElement('p');
+            message.innerText = `You are about to hire ${trainerName} for ${months} month(s).`;
+
+            // Add Confirm button
+            const confirmButton = document.createElement('button');
+            confirmButton.innerText = 'Confirm';
+            confirmButton.style.margin = '5px';
+            confirmButton.style.backgroundColor = '#4CAF50';
+            confirmButton.style.color = 'white';
+            confirmButton.style.padding = '10px';
+            confirmButton.style.border = 'none';
+            confirmButton.style.borderRadius = '5px';
+            confirmButton.style.cursor = 'pointer';
+            confirmButton.onclick = function () {
+                alert(`Confirmed: You have hired ${trainerName} for ${months} month(s).`);
+                document.body.removeChild(modal); // Remove the modal after confirmation
+            };
+
+            // Add Cancel button
+            const cancelButton = document.createElement('button');
+            cancelButton.innerText = 'Cancel';
+            cancelButton.style.margin = '5px';
+            cancelButton.style.backgroundColor = '#f44336';
+            cancelButton.style.color = 'white';
+            cancelButton.style.padding = '10px';
+            cancelButton.style.border = 'none';
+            cancelButton.style.borderRadius = '5px';
+            cancelButton.style.cursor = 'pointer';
+            cancelButton.onclick = function () {
+                document.body.removeChild(modal); // Remove the modal when canceled
+            };
+
+            // Append content to modal
+            modalContent.appendChild(message);
+            modalContent.appendChild(confirmButton);
+            modalContent.appendChild(cancelButton);
+            modal.appendChild(modalContent);
+
+            // Append modal to the body
+            document.body.appendChild(modal);
+        }
+
+        function logout() {
+            window.location.href = "/perform_logout"; // Correct logout URL
+        }
+
+    </script>
+
+</body>
+
+</html>
